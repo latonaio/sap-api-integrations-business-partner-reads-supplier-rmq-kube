@@ -183,37 +183,29 @@ func (c *SAPAPICaller) AsyncGetBPSupplier(businessPartner, businessPartnerRole, 
 ```
 
 ## Output  
-本マイクロサービスでは、[golang-logging-library](https://github.com/latonaio/golang-logging-library) により、以下のようなデータがJSON形式で出力されます。  
+本マイクロサービスでは、[golang-logging-library-for-sap](https://github.com/latonaio/golang-logging-library-for-sap) により、以下のようなデータがJSON形式で出力されます。  
 以下の sample.json の例は、SAP ビジネスパートナ仕入先  の 仕入先データ が取得された結果の JSON の例です。  
 以下の項目のうち、"Supplier" ～ "to_SupplierCompany" は、/SAP_API_Output_Formatter/type.go 内 の Type Supplier {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
 
 ```
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-business-partner-reads-supplier/SAP_API_Caller/caller.go#L381",
-	"function": "sap-api-integrations-business-partner-reads-supplier/SAP_API_Caller.(*SAPAPICaller).Supplier",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-business-partner-reads-supplier/SAP_API_Caller/caller.go#L325",
+	"function": "sap-api-integrations-business-partner-reads-supplier/SAP_API_Caller.(*SAPAPICaller).Address",
 	"level": "INFO",
 	"message": [
 		{
-			"Supplier": "1018",
-			"AuthorizationGroup": "",
-			"CreationDate": "/Date(1540771200000)/",
-			"Customer": "",
-			"PaymentIsBlockedForSupplier": false,
-			"PostingIsBlocked": false,
-			"PurchasingIsBlocked": false,
-			"SupplierAccountGroup": "SUPL",
-			"SupplierFullName": "Company Bechtle AGKriek street/74172 Neckarsulm",
-			"SupplierName": "Bechtle AG Kriek street",
-			"BirthDate": "",
-			"DeletionIndicator": false,
-			"Industry": "",
-			"IsNaturalPerson": "",
-			"SupplierCorporateGroup": "",
-			"SupplierProcurementBlock": "",
-			"to_SupplierPurchasingOrg": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_Supplier('1018')/to_SupplierPurchasingOrg",
-			"to_SupplierCompany": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_Supplier('1018')/to_SupplierCompany"
+			"BusinessPartner": "1018",
+			"AddressID": "30662",
+			"ValidityStartDate": "",
+			"ValidityEndDate": "",
+			"Country": "DE",
+			"Region": "",
+			"StreetName": "Bechtleplatz",
+			"CityName": "Neckarsulm",
+			"PostalCode": "74172",
+			"Language": "EN"
 		}
 	],
-	"time": "2021-12-21T12:07:35.34316+09:00"
+	"time": "2022-01-28T09:53:08+09:00"
 }
 ```
