@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/latonaio/golang-logging-library/logger"
+	"github.com/latonaio/golang-logging-library-for-sap/logger"
 	"golang.org/x/xerrors"
 )
 
@@ -124,7 +124,7 @@ func (c *SAPAPICaller) General(businessPartner string) {
 		return
 	}
 	c.log.Info(addressData)
-	
+
 	bankData, err := c.callToBank(generalData[0].ToBank)
 	if err != nil {
 		c.log.Error(err)
@@ -160,7 +160,7 @@ func (c *SAPAPICaller) General(businessPartner string) {
 		return
 	}
 	c.log.Info(purchasingOrganizationData)
-	
+
 	partnerFunctionData, err := c.callToPartnerFunction(purchasingOrganizationData[0].ToPartnerFunction)
 	if err != nil {
 		c.log.Error(err)
@@ -477,7 +477,7 @@ func (c *SAPAPICaller) callBPSrvAPIRequirementBPName(api, bPName string) ([]sap_
 
 func (c *SAPAPICaller) Supplier(supplier string) {
 	supplierData, err := c.callBPSupplierSrvAPIRequirementSupplier("A_Supplier", supplier)
-	
+
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -500,7 +500,7 @@ func (c *SAPAPICaller) Supplier(supplier string) {
 		return
 	}
 	c.log.Info(purchasingOrganizationData)
-	
+
 	partnerFunctionData, err := c.callToPartnerFunction(purchasingOrganizationData[0].ToPartnerFunction)
 	if err != nil {
 		c.log.Error(err)
